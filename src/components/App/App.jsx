@@ -5,6 +5,7 @@ import Feeling from '../Feeling/Feeling';
 import Comments from '../Comments/Comments';
 import Supported from '../Supported/Supported';
 import Understanding from '../Understanding/Understanding';
+import Review from '../Review/Review';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route path="/comment" exact>
           <Comments />
+        </Route>
+        <Route path="/review" exact>
+          <Review />
         </Route>
       </Router>
     </div>

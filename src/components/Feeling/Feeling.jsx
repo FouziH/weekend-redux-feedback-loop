@@ -10,7 +10,8 @@ function  Feeling () {
   const history = useHistory();
   //declaring my dispatch
   const dispatch = useDispatch();
-  const onNextButton = () => {
+  const onNextButton = (event) => {
+    event.preventDefault()
     //This -if statement- is responsible for checking wether the
     //input value doesn't equal to null
     console.log(feeling);
@@ -22,7 +23,7 @@ function  Feeling () {
     ) {
       //dispatch local state to global state
       dispatch({
-        typ: "CUSTOMER_FEELING_INPUTS",
+        type: "CUSTOMER_FEELING_INPUTS",
         payload: feeling,
       });
 
@@ -33,17 +34,21 @@ function  Feeling () {
   };
 
   return (
-    <>
+
+    <form>
+   
       <h1>How are you feelings today?</h1>
       <h4>Comments</h4>
       <input
         type="number"
         min="0"
-        max="10"
+        max="5"
+        value={feeling}
+        placeholder="Enter number between 0-5"
         onChange={(evt) => setFeeling(evt.target.value)}
       />
       <button onClick={onNextButton}>NEXT</button>
-    </>
+    </form>
   );
 }
 

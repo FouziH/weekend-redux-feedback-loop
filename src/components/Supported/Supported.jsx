@@ -21,7 +21,7 @@ function Supported() {
     ) {
       //Dispatching out local state to the global
       dispatch({
-        typ: "CUSTOMER_SUPPORT_INPUTS",
+        type: "CUSTOMER_SUPPORT_INPUTS",
         payload: support,
       });
       history.push("/comment"); //if it meats the condition, we will proceed to the next  page.
@@ -29,7 +29,7 @@ function Supported() {
       alert("Please enter a value between 0-5"); // if the condition has not been met, the user will be alerted to reevaluate the input;
     }
 
-    setSupport(0);
+    setSupport();
   };
   return (
     <>
@@ -40,7 +40,7 @@ function Supported() {
         min="0"
         max="10"
         maxLength="1"
-        placeholder="Enter number between 0-10"
+        placeholder="Enter number between 0-5"
         onChange={(event) => setSupport(event.target.value)}
       />
       <button onClick={onNextButton}>NEXT</button>

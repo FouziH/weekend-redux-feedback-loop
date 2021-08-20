@@ -16,11 +16,11 @@ function  Comments () {
     if (comment.length != "" && comment.length <= 140 && comment.length >= 3) {
       //dispatch local state to global state
       dispatch({
-        typ: "CUSTOMER_COMMENT_INPUTS",
+        type: "CUSTOMER_COMMENT_INPUTS",
         payload: comment,
       });
 
-      history.push("/comment"); //if it meats the condition, we will proceed to the next  page.
+      history.push("/review"); //if it meats the condition, we will proceed to the next  page.
     } else {
       alert(
         "You have enter your comments here incorrectly. Please enter a minimum character of 3 and max of 140."

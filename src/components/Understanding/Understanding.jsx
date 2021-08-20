@@ -23,7 +23,7 @@ function Understanding () {
     ) {
       //dispatch local state to global state
       dispatch({
-        typ: "CUSTOMER_UNDERSTANDING_INPUTS",
+        type: "CUSTOMER_UNDERSTANDING_INPUTS",
         payload: understanding,
       });
 
@@ -40,7 +40,8 @@ function Understanding () {
         type="number"
         min="0"
         max="10"
-        placeholder="Enter number between 0-10"
+        value={understanding}
+        placeholder="Enter number between 0-5"
         onChange={(event) => setUnderstanding(event.target.value)}
       />
       <button onClick={onNextButton}>NEXT</button>

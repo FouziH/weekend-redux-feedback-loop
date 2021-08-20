@@ -16,20 +16,35 @@ import logger from 'redux-logger'
 
 //step 2: 
     //Create a Reducer feeling reducer 👇
-    const feeling = (state = 0, action) => {
+    const feeling = (state = [], action) => {
+
+        if (action.type === "CUSTOMER_FEELING_INPUTS") {
+            console.log(action.payload);
+                return action.payload
+        }
         
         return state
     };
      //Create a Reducer understanding reducer 👇
-    const understanding = (state = 0, action) => {
+    const understanding = (state = [], action) => {
+        if (action.type === "CUSTOMER_UNDERSTANDING_INPUTS") {
+            console.log(action.payload);
+          return action.payload;
+        }
         return state
     };
      //Create a Reducer support reducer 👇
-    const support = (state = 0, action) => {
+    const support = (state = [], action) => {
+         if (action.type === "CUSTOMER_SUPPORT_INPUTS") {
+           return action.payload;
+         }
         return state
     };
      //Create a Reducer comment reducer 👇
     const comment = (state = [], action) => {
+       if (action.type === "CUSTOMER_COMMENT_INPUTS") {
+         return action.payload;
+       }
         return state
     }
 
