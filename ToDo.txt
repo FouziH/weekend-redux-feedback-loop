@@ -4,11 +4,11 @@ Initial Phase:
     [x] create database
 Phase 2:
     [x] Folder Understand
-        [] file name Understanding file
+        [x] file name Understanding file
     [x] folder Supported 
-        [] file Supported.jsx
+        [x] file Supported.jsx
     [x] Folder Feeling
-        [] Feeling.jsx
+        [x] Feeling.jsx
     [x] Comment Folder 
         [] Comment.jsx
 
