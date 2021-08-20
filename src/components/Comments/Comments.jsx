@@ -10,8 +10,8 @@ function  Comments () {
   return(
      <>
        <h1>Any comments you want to leave?</h1>
-       <h4>comments</h4>
-       <input type="text" />
+       <h4>comments?</h4>
+       <input type="text" placeholder="Enter your comments"/>
        <button onClick={onNextButton}>NEXT</button>
      </>
   )
