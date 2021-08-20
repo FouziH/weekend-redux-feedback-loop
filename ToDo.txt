@@ -3,6 +3,7 @@ Initial Phase:
     [x] npm install 
     [x] create database
     [x] BrowserRouter as Router, Route, Link } from "react-router-dom
+    [x] npm install redux react-redux
 Phase 2:
     [x] Folder Understand
         [x] file name Understanding file
@@ -14,13 +15,19 @@ Phase 2:
         [x] Comment.jsx
 Phase 3: 
     [x] Create input element for each folder/file.jsx
-    [] Input validation must be provided 
+        [x] Create the local state that would need to be sent out to the redux store
+    [x] Input validation must be provided 
         [x] Feeling input validation 
-        [] Understanding input validation
-        [] Supported input validation
-        [] Comments input validation
+        [x] Understanding input validation
+        [x] Supported input validation
+        [x] Comments input validation
+        [x] Create useHistory and create history path for each form 
+phase 4:
+    [x] Create redux store and reducers 
+    [x] within components ship local states to redux global store using the dispatch method
+       
 
-    [x] Create useHistory and create history path for each form 
+
     
     
 
