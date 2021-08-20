@@ -8,11 +8,17 @@ let history = useHistory()
 
 const onNextButton = () => {
   //This -if statement- is responsible for checking wether the
-  //input value doesn't equal to null 
-  if (understanding.length != null) {
+  //input value doesn't equal to null
+  console.log(understanding);
+  if (
+    understanding.length != null &&
+    understanding.length < 2 &&
+   understanding >= 0 &&
+    understanding <= 5
+  ) {
     history.push("/support"); //if it meats the condition, we will proceed to the next  page.
   } else {
-    alert("Please enter a value between 0-10"); /// if the condition has not been met, the user will be alerted to reevaluate the input
+    alert("Please enter a value between 0-5"); // if the condition has not been met, the user will be alerted to reevaluate the input;
   }
 }
     return (

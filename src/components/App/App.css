@@ -24,3 +24,34 @@ h4 {
 input{
   width: 20%;
 }
+
+.commentInput{
+  padding: 40px;
+  text-align: center;
+}
+.commentButton{
+  padding: 7px;
+  width: 90px;
+  background-color: #033076;;
+  color: white;
+}
+.commentButton:hover{
+  background-color: lightgray;
+}
+input{
+  padding: 10px;
+   border-radius: 15px;
+}
+button{
+  padding: 10px;
+  width: 90px;
+  background-color: #033076;;
+  color: white;
+  border-radius: 15px;
+}
+button:hover{
+  background-color: lightgray;
+}
+input:hover{
+    background-color: lightgray;
+}

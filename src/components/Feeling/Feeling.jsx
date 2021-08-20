@@ -7,15 +7,20 @@ function  Feeling () {
     
     
     const onNextButton = () => {
-    //This -if statement- is responsible for checking wether the
-    //input value doesn't equal to null 
-    if (feeling.length != null) {
-      history.push("/understanding"); //if it meats the condition, we will proceed to the next  page.
-    } else {
-      alert("Please enter a value between 0-10");// if the condition has not been met, the user will be alerted to reevaluate the input 
-    }
-               
-}   
+      //This -if statement- is responsible for checking wether the
+      //input value doesn't equal to null
+      console.log(feeling);
+      if (
+        feeling.length != null &&
+        feeling.length < 2 &&
+        feeling >= 0 &&
+        feeling <= 5
+      ) {
+        history.push("/understanding"); //if it meats the condition, we will proceed to the next  page.
+      } else {
+        alert("Please enter a value between 0-5"); // if the condition has not been met, the user will be alerted to reevaluate the input;
+      }
+    }   
      
     
     return(
