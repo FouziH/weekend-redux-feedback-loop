@@ -1,10 +1,20 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import {useState} from "react";
 function Supported() {
+  let [support, setSupported] = useState (0)
     let history = useHistory();
 const onNextButton = () => {
-    history.push("/comment");
-     
+  //This -if statement- is responsible for checking wether the
+  //input value doesn't equal to null
+  if ((support.length != null) && (support >= 0 && support<=10)) {
+    history.push("/comment"); //if it meats the condition, we will proceed to the next  page.
+  } else {
+
+    alert("Please enter a value between 0-10"); // if the condition has not been met, the user will be alerted to reevaluate the input
+       
+  }
+   setSupported(0);
 }
     return (
       <>

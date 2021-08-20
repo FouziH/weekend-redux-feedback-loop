@@ -1,16 +1,28 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
+import {useState} from 'react'
 function  Feeling () {
-    let history = useHistory()
+    let history = useHistory();
+    let [feeling, setFeeling]= useState(0)
+    
+    
     const onNextButton = () => {
-
-        history.push('/understanding')
+    //This -if statement- is responsible for checking wether the
+    //input value doesn't equal to null 
+    if (feeling.length != null) {
+      history.push("/understanding"); //if it meats the condition, we will proceed to the next  page.
+    } else {
+      alert("Please enter a value between 0-10");// if the condition has not been met, the user will be alerted to reevaluate the input 
     }
+               
+}   
+     
+    
     return(
         <>
         <h1>How are you feelings today?</h1>
         <h4>Comments</h4>
-        <input type="number" min="0" max="10"/>
+        <input type="number" min="0" max="10" onChange={(evt) => setFeeling(evt.target.value)}/>
         <button onClick={onNextButton}>NEXT</button>
         </>
 

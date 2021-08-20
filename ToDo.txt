@@ -14,6 +14,12 @@ Phase 2:
         [x] Comment.jsx
 Phase 3: 
     [x] Create input element for each folder/file.jsx
+    [] Input validation must be provided 
+        [x] Feeling input validation 
+        [] Understanding input validation
+        [] Supported input validation
+        [] Comments input validation
+
     [x] Create useHistory and create history path for each form 
     
     
