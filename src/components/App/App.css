@@ -55,3 +55,7 @@ button:hover{
 input:hover{
     background-color: lightgray;
 }
+.surveyHomePage{
+  width:240px;
+  font-size: 14px;
+}

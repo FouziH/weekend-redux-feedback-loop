@@ -11,7 +11,7 @@ function SurveyHomePage () {
   return (
     <>
       <h3>Thank You!</h3>
-      <button onClick={onNextButton}>Leave New Feedback</button>
+      <button className="surveyHomePage" onClick={onNextButton}>Leave New Feedback</button>
     </>
   );
 }
