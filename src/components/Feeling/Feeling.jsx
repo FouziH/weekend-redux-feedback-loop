@@ -16,8 +16,9 @@ function  Feeling () {
     //input value doesn't equal to null
     console.log(feeling);
     if (
-      feeling.length != null &&
+     feeling.length != null &&
       feeling.length < 2 &&
+      feeling.length === 1 &&
       feeling >= 0 &&
       feeling <= 5
     ) {
@@ -38,7 +39,7 @@ function  Feeling () {
     <form>
    
       <h1>How are you feelings today?</h1>
-      <h4>Comments</h4>
+      <h4>Feelings</h4>
       <input
         type="number"
         min="0"

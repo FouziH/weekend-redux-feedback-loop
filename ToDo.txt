@@ -42,6 +42,13 @@ Components:
 ![understanding](wireframes/page-five.png)
 
 *********Base Mode completed**********************
+> NOTE: These stretch goals are intended to be completed in order
+
+STEP 1:
+
+[] Allow the user to go back to a previous step and change their score. You still need to disallow empty values!
+
+
 
 
     

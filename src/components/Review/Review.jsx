@@ -35,6 +35,12 @@ function Review () {
 
     history.push("/");
   }
+  const onBackButton = () => {
+    //When this button is clicked, the user will go back to the previous page and edit their response differently
+    history.push("/comment");
+    console.log("on back button");
+  };
+  
     return (
       <>
         <h1>Review Your Feedback</h1>
@@ -42,6 +48,7 @@ function Review () {
         <p>Understanding:{customerUnderStanding} </p>
         <p>Support: {customerSupport}</p>
         <p>Comments: {customerComment} </p>
+        <button onClick={onBackButton}>BACK</button>
         <button onClick={onSubmitButton}>SUBMIT</button>
       </>
     );

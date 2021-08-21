@@ -17,7 +17,8 @@ function Understanding () {
     console.log(understanding);
     if (
       understanding.length != null &&
-      understanding.length < 2 &&
+     understanding.length < 2 &&
+     understanding.length === 1 &&
       understanding >= 0 &&
       understanding <= 5
     ) {
@@ -32,6 +33,11 @@ function Understanding () {
       alert("Please enter a value between 0-5"); // if the condition has not been met, the user will be alerted to reevaluate the input;
     }
   };
+  const onBackButton = () => {
+    //When this button is clicked, the user will go back to the previous page and edit their response differently 
+    history.push('/feeling')
+    console.log("on back button")
+  }
   return (
     <>
       <h3>How well are you understanding the content?</h3>
@@ -44,6 +50,9 @@ function Understanding () {
         placeholder="Enter number between 0-5"
         onChange={(event) => setUnderstanding(event.target.value)}
       />
+      <br />
+      <br />
+      <button onClick={onBackButton}>BACK</button>
       <button onClick={onNextButton}>NEXT</button>
     </>
   );

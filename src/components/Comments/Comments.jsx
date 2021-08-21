@@ -27,6 +27,12 @@ function  Comments () {
       ); // if the condition has not been met, the user will be alerted to reevaluate the input;
     }
   };
+  const onBackButton = () => {
+    //When this button is clicked, the user will go back to the previous page and edit their response differently
+    history.push("/support");
+    console.log("on back button");
+  };
+  
   return (
     <>
       <h1>Any comments you want to leave?</h1>
@@ -39,6 +45,7 @@ function  Comments () {
         onChange={(event) => setComment(event.target.value)}
       />
       <br />
+      <button onClick={onBackButton}>BACK</button>
       <button className="commentButton" onClick={onNextButton}>
         NEXT
       </button>
