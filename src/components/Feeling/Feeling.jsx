@@ -24,7 +24,7 @@ function  Feeling () {
       //dispatch local state to global state
       dispatch({
         type: "CUSTOMER_FEELING_INPUTS",
-        payload: feeling,
+        payload: Number(feeling),
       });
 
       history.push("/understanding"); //if it meats the condition, we will proceed to the next  page.

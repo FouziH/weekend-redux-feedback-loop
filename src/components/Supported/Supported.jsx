@@ -22,7 +22,7 @@ function Supported() {
       //Dispatching out local state to the global
       dispatch({
         type: "CUSTOMER_SUPPORT_INPUTS",
-        payload: support,
+        payload: Number(support),
       });
       history.push("/comment"); //if it meats the condition, we will proceed to the next  page.
     } else {

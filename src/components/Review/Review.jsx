@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import axios from 'axios'
 
+
 function Review () {
   const customerFeeling = useSelector (store => store.feeling)
   const customerUnderStanding = useSelector (store => store.understanding )
@@ -11,15 +12,28 @@ function Review () {
   let history = useHistory()
 
   const onSubmitButton = () => {
-    console.log("on submit button")
+    console.log("on submit button");
 
-    // axios.post({
-    //   method:"POST",
-    //   url:
-    // })
+    axios
+      ({
+        method: "POST",
+        url: "/api/survey",
+        data: {
+          customerFeeling,
+         customerUnderStanding,
+          customerSupport,
+          customerComment,
+        },
+      })
+      .then((response) => {
+        console.log("response from the db is:", response);
+           history.push("/");
+      })
+      .catch((error) => {
+        console.log("error from the POST /survey is:", error);
+      });
 
-
-    history.push('/')
+    history.push("/");
   }
     return (
       <>

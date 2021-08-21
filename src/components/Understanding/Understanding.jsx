@@ -24,7 +24,7 @@ function Understanding () {
       //dispatch local state to global state
       dispatch({
         type: "CUSTOMER_UNDERSTANDING_INPUTS",
-        payload: understanding,
+        payload: Number(understanding),
       });
 
       history.push("/support"); //if it meats the condition, we will proceed to the next  page.
