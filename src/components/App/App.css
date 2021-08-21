@@ -60,3 +60,17 @@ input:hover{
   width:240px;
   font-size: 14px;
 }
+.myButtons{
+  display: inline;
+  margin-right: 30px;
+}
+ul{
+  list-style: none;
+}
+li{
+  border: 1px solid  #033076;
+  margin-right: auto 20px;
+  padding: 30px;
+  font-size: 20px;
+  margin-top: 20px;
+}

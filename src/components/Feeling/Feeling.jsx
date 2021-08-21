@@ -2,6 +2,8 @@ import React from 'react'
 import {useHistory} from 'react-router-dom'
 import {useState} from 'react'
 import { useSelector, useDispatch } from "react-redux";
+import { TextField } from '@material-ui/core';
+import Button from "@material-ui/core/Button";
 
 function  Feeling () {
   //declaring my local state
@@ -35,20 +37,32 @@ function  Feeling () {
   };
 
   return (
-
     <form>
-   
       <h1>How are you feelings today?</h1>
-      <h4>Feelings</h4>
-      <input
+      <TextField
+        required
+        label="0 to 5?"
+        variant="outlined"
+        InputLabelProps={{
+          shrink: true,
+        }}
         type="number"
         min="0"
         max="5"
         value={feeling}
-        placeholder="Enter number between 0-5"
+
         onChange={(evt) => setFeeling(evt.target.value)}
       />
-      <button onClick={onNextButton}>NEXT</button>
+      <br />
+      <br />
+      <Button
+        size="small"
+        color="primary"
+        variant="contained"
+        onClick={onNextButton}
+      >
+        NEXT
+      </Button>
     </form>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import {useHistory} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import axios from 'axios'
+import Button from "@material-ui/core/Button";
 
 
 function Review () {
@@ -44,12 +45,34 @@ function Review () {
     return (
       <>
         <h1>Review Your Feedback</h1>
-        <p>Feelings:{customerFeeling}</p>
-        <p>Understanding:{customerUnderStanding} </p>
-        <p>Support: {customerSupport}</p>
-        <p>Comments: {customerComment} </p>
-        <button onClick={onBackButton}>BACK</button>
-        <button onClick={onSubmitButton}>SUBMIT</button>
+        <ul>
+          <li>Feelings:{customerFeeling}</li>
+          <li>Understanding:{customerUnderStanding}</li>
+          <li>Support: {customerSupport}</li>
+          <li>Comments: {customerComment} </li>
+        </ul>
+        <br />
+        <br />
+        <div className="myButtons">
+          <Button
+            size="small"
+            color="primary"
+            variant="contained"
+            onClick={onBackButton}
+          >
+            BACK
+          </Button>
+        </div>
+        <div className="myButtons">
+          <Button
+            size="small"
+            color="primary"
+            variant="contained"
+            onClick={onSubmitButton}
+          >
+            SUBMIT
+          </Button>
+        </div>
       </>
     );
 }

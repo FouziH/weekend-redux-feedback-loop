@@ -2,6 +2,8 @@ import React from 'react'
 import {useHistory} from 'react-router-dom'
 import { useState } from 'react'
 import {useSelector, useDispatch} from 'react-redux'
+import { TextField } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
 
 function Understanding () {
   //declaring my local state
@@ -41,19 +43,44 @@ function Understanding () {
   return (
     <>
       <h3>How well are you understanding the content?</h3>
-      <h4>Understanding?</h4>
-      <input
+      <TextField
+        required
+        label="0 to 5?"
+        variant="outlined"
+        InputLabelProps={{
+          shrink: true,
+        }}
+        style={{
+          width: 300,
+        }}
         type="number"
         min="0"
         max="10"
         value={understanding}
-        placeholder="Enter number between 0-5"
         onChange={(event) => setUnderstanding(event.target.value)}
       />
       <br />
       <br />
-      <button onClick={onBackButton}>BACK</button>
-      <button onClick={onNextButton}>NEXT</button>
+      <div className="myButtons">
+        <Button
+          size="small"
+          color="primary"
+          variant="contained"
+          onClick={onBackButton}
+        >
+          BACK
+        </Button>
+      </div>
+      <div className="myButtons">
+        <Button
+          size="small"
+          color="primary"
+          variant="contained"
+          onClick={onNextButton}
+        >
+          NEXT
+        </Button>
+      </div>
     </>
   );
 }
