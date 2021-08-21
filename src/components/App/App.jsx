@@ -5,6 +5,7 @@ import Feeling from '../Feeling/Feeling';
 import Comments from '../Comments/Comments';
 import Supported from '../Supported/Supported';
 import Understanding from '../Understanding/Understanding';
+import SurveyHomePage from '../SurveyHomePage/SurveyHomePage';
 import Review from '../Review/Review';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -18,6 +19,9 @@ function App() {
       </header>
       <Router>
         <Route path="/" exact>
+          <SurveyHomePage />
+        </Route>
+        <Route path="/feeling" exact>
           <Feeling />
         </Route>
         <Route path="/understanding" exact>
