@@ -27,7 +27,7 @@ function Review () {
       })
       .then((response) => {
         console.log("response from the db is:", response);
-           history.push("/");
+           
       })
       .catch((error) => {
         console.log("error from the POST /survey is:", error);

@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 function  Feeling () {
   //declaring my local state
-  let [feeling, setFeeling] = useState(0);
+  let [feeling, setFeeling] = useState('');
   //declaring my history
   const history = useHistory();
   //declaring my dispatch

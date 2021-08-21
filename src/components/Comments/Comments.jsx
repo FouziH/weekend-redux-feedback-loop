@@ -8,7 +8,7 @@ function  Comments () {
   //declaring my dispatch
   const dispatch = useDispatch();
   //declaring my local state 
-  let [comment, setComment] = useState("");
+  let [comment, setComment] = useState('');
   const onNextButton = () => {
     //This -if statement- is responsible for checking wether the
     //input value doesn't equal to null

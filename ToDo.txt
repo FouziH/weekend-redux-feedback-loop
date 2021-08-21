@@ -1,31 +1,47 @@
 
-Initial Phase:
-    [x] npm install 
-    [x] create database
-    [x] BrowserRouter as Router, Route, Link } from "react-router-dom
-    [x] npm install redux react-redux
-Phase 2:
-    [x] Folder Understand
-        [x] file name Understanding file
-    [x] folder Supported 
-        [x] file Supported.jsx
-    [x] Folder Feeling
-        [x] Feeling.jsx
-    [x] Comment Folder 
-        [x] Comment.jsx
-Phase 3: 
-    [x] Create input element for each folder/file.jsx
-        [x] Create the local state that would need to be sent out to the redux store
-    [x] Input validation must be provided 
-        [x] Feeling input validation 
-        [x] Understanding input validation
-        [x] Supported input validation
-        [x] Comments input validation
-        [x] Create useHistory and create history path for each form 
-phase 4:
-    [x] Create redux store and reducers 
-    [x] within components ship local states to redux global store using the dispatch method
-       
+### ADD NEW FEEDBACK
+
+> NOTE: As a baseline requirement, you must use Redux to store your data across views.
+
+Create a multi-part form that allows users to leave feedback for today. 
+There will be 4 views for the form parts.
+
+Components:
+ [x] How are you feeling today?
+ [x] feeling](wireframes/feeling.png)
+ [x] How well are you understanding the content?
+ [x] understanding](wireframes/understanding.png) 
+ [x] How well are you being supported?
+ [x] (wireframes/supported.png)
+ [x] Any comments you want to leave?
+
+
+****While there is no nav bar*******
+[x] each part of the form should be at its own route. 
+[x] Clicking next should move the user to the appropriate step in the process.
+
+### Input Validation
+
+[x] Each step should only allow the user to advance to the next step if a score was provided. 
+[x] Be sure to tell the user in some way that a value must be provided.
+
+[x] The `Comments` step does not need to be validated, an empty value is okay.
+
+## THE REVIEW COMPONENT
+
+[x] The last step of the process will allow the user to review their feedback. Users are not able to change their input on this step or go back for Base Mode. 
+
+![comments](wireframes/review-active.png)
+
+## SUBMIT THE FEEDBACK
+
+[x] The `Review` step needs to have a submit button which will be clicked on to actually submit the completed feedback to the server.
+
+[x] When the submit button is clicked, save the submission in the database. The user should see a submission success page. They can then click the button to take a new survey, which needs to reset all the data and go back to the first step.
+
+![understanding](wireframes/page-five.png)
+
+*********Base Mode completed**********************
 
 
     

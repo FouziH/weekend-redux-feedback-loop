@@ -8,12 +8,15 @@ router.post('/', (req, res) => {
     sqlQuery = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
 VALUES ($1, $2, $3, $4)`;
     console.log(req.body)
+    console.log(typeof req.body.feeling)
+    console.log(typeof req.body.understanding)
+    console.log( typeof req.body.support)
 let sqlParams = [
-    req.body.feeling,
-    req.body.understanding,
-    req.body.support,
-    req.body.comment, 
-]
+  req.body.customerFeeling,
+  req.body.customerUnderStanding,
+  req.body.customerSupport,
+  req.body.customerComment,
+];
 pool.query(sqlQuery,sqlParams).then(dbRes => {
     console.log('dbRes is',dbRes)
     res.sendStatus(201)

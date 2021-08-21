@@ -4,7 +4,7 @@ import {useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 function Supported() {
   //declaring my local state 
-  let [support, setSupport] = useState(0);
+  let [support, setSupport] = useState('');
   //declaring my history
   const history = useHistory();
   //declaring my dispatch

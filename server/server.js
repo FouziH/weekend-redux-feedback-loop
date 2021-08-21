@@ -1,19 +1,18 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const bodyParser = require('body-parser');
-const PORT = process.env.PORT || 5000;
+const bodyParser = require("body-parser");
+const PORT= process.env.PORT || 5000;
 
 /** ---------- MIDDLEWARE ---------- **/
 app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static('build'));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("build"));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-const surveyRouter = require('./routes/survey.routes')
-app.use('/api/survey', surveyRouter)
-
+const surveyRouter = require("./routes/survey.routes");
+app.use("/api/survey", surveyRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {
-    console.log('Listening on port: ', PORT);
+  console.log("Listening on port: ", PORT);
 });
