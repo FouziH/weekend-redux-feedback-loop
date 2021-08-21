@@ -6,6 +6,7 @@ import Comments from '../Comments/Comments';
 import Supported from '../Supported/Supported';
 import Understanding from '../Understanding/Understanding';
 import SurveyHomePage from '../SurveyHomePage/SurveyHomePage';
+import Admin from '../Admin/Admin';
 import Review from '../Review/Review';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -18,6 +19,9 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
       <Router>
+        <Route path="/admin" exact>
+          <Admin />
+        </Route>
         <Route path="/" exact>
           <SurveyHomePage />
         </Route>

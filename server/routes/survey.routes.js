@@ -26,4 +26,18 @@ pool.query(sqlQuery,sqlParams).then(dbRes => {
 })
 })
 
+//GET Survey 
+
+router.get('/', (req, res) =>{
+    let sqlQuery = `SELECT * FROM "feedback"
+    ORDER BY "date" ASC`
+    pool.query(sqlQuery)
+    .then(dbRes => {
+        res.send(dbRes.rows)
+        console.log(dbRes.rows)
+    }).catch(error => {
+        console.log('dbRes /get error is:', error)
+    })
+})
+
 module.exports = router
