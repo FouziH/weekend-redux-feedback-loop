@@ -7,6 +7,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import axios from "axios";
+import DeleteOutlinedIcon from "@material-ui/icons/DeleteOutlined";
 import {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { responsiveFontSizes } from "@material-ui/core";
@@ -15,14 +16,14 @@ import Button from '@material-ui/core/Button'
 
 function Admin() {
 
-    let dispatch = useDispatch()
+    // let dispatch = useDispatch()
     
     useEffect(() => {
         getSurveyResults()
     }, [])
 
-const [survey, setSurveyResults] = useState([])
- const getSurveyResults = () => {
+    const [survey, setSurveyResults] = useState([])
+    const getSurveyResults = () => {
         axios({
             method:'GET',
             url: "/api/survey"
@@ -32,6 +33,12 @@ const [survey, setSurveyResults] = useState([])
             console.log("/GET error is", error)
         })
     }
+    const onDeleteButton = (event) =>{
+        console.log("on Delete Button", event.target)
+
+    }
+
+
   return (
     <>
       <h1>FeedbAck Results!</h1>
@@ -55,7 +62,11 @@ const [survey, setSurveyResults] = useState([])
                 <TableCell align="center">{item.support}</TableCell>
                 <TableCell align="center">{item.comments}</TableCell>
                 <TableCell align="center">
-                  <Button size="small" color="primary" variant="contained">
+                  <Button onClick={onDeleteButton}
+                    size="small"
+                    color="primary"
+                    variant="contained"
+                  >
                     Delete
                   </Button>
                 </TableCell>

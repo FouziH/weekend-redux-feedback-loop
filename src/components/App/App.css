@@ -74,3 +74,6 @@ li{
   font-size: 20px;
   margin-top: 20px;
 }
+ tr:nth-child(even) {
+  background-color: lightblue;
+}
