@@ -6,15 +6,17 @@ import Button from "@material-ui/core/Button";
 
 
 function Review () {
+  //calling my global redux stores below 👇
   const customerFeeling = useSelector (store => store.feeling)
   const customerUnderStanding = useSelector (store => store.understanding )
   const customerSupport = useSelector (store => store.support)
   const customerComment = useSelector(store => store.comment)
+  // declaring variable called history 
   let history = useHistory()
-
+  
   const onSubmitButton = () => {
     console.log("on submit button");
-
+    //making axios post request 
     axios
       ({
         method: "POST",
@@ -27,19 +29,21 @@ function Review () {
         },
       })
       .then((response) => {
+        //login the response from the server to console
         console.log("response from the db is:", response);
            
       })
       .catch((error) => {
+        //login the error from the server to console
         console.log("error from the POST /survey is:", error);
       });
 
+      //will be redirected to my Survey Home Page
     history.push("/");
   }
   const onBackButton = () => {
     //When this button is clicked, the user will go back to the previous page and edit their response differently
     history.push("/comment");
-    console.log("on back button");
   };
   
     return (

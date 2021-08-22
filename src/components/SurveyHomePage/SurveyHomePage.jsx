@@ -7,6 +7,7 @@ function SurveyHomePage () {
   const history = useHistory();
 
   const onNextButton = () => {
+      //When the user clicks on Leave New Feedback, he will directed to /feeling page
       history.push('/feeling')
   };
   return (

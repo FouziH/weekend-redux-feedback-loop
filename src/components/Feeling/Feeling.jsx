@@ -26,7 +26,9 @@ function  Feeling () {
     ) {
       //dispatch local state to global state
       dispatch({
+        //Setting type
         type: "CUSTOMER_FEELING_INPUTS",
+        //sending feeling payload to my global redux store 
         payload: Number(feeling),
       });
 

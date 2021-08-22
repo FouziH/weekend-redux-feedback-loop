@@ -24,8 +24,8 @@ function Admin() {
     const [survey, setSurveyResults] = useState([])
     const getSurveyResults = () => {
 
-        //making axios get request to my server
-        axios({
+      //making axios get request to my server
+      axios({
             method:'GET',
             url: "/api/survey"
         }).then(response => {

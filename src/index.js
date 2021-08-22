@@ -6,23 +6,16 @@ import registerServiceWorker from './registerServiceWorker';
 import {createStore, combineReducers, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux';
 import logger from 'redux-logger'
-
 //Step 1:
-    //Create a store 
+    //Create one or more store 
     //One or more reducers
     //A Provider
-
-
-
-//step 2: 
-    //Create a Reducer feeling reducer 👇
     const feeling = (state = [], action) => {
 
         if (action.type === "CUSTOMER_FEELING_INPUTS") {
             console.log(action.payload);
                 return action.payload
         }
-        
         return state
     };
      //Create a Reducer understanding reducer 👇
@@ -47,7 +40,7 @@ import logger from 'redux-logger'
        }
         return state
     }
-
+//Creating my store instance and passing my reducers
 const storeInstance = createStore(
     combineReducers({
         feeling,
@@ -56,7 +49,6 @@ const storeInstance = createStore(
         comment
     }, applyMiddleware(logger))
 )
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={storeInstance}>
@@ -65,7 +57,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
-
  // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
