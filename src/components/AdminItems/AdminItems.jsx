@@ -4,7 +4,6 @@ import TableCell from "@material-ui/core/TableCell";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
 import axios from 'axios';
-
 //This function is responsible for displaying items, and refreshing the page with the new items
 function AdminItems({ item, getSurveyResults }) {
     //this function will allow me to make a delete request to the server using item.id
@@ -39,7 +38,7 @@ function AdminItems({ item, getSurveyResults }) {
         <TableCell align="center">{item.support}</TableCell>
         <TableCell align="center">{item.comments}</TableCell>
         <TableCell align="center">
-          <Button
+        <Button
             onClick={onDeleteButton}
             size="small"
             color="primary"
@@ -47,11 +46,10 @@ function AdminItems({ item, getSurveyResults }) {
             endIcon={<DeleteIcon />}
           >
             Delete
-          </Button>
+        </Button>
         </TableCell>
       </TableRow>
     </>
   );
 }
-
 export default AdminItems

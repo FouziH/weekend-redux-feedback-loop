@@ -8,15 +8,11 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import axios from "axios";
 import AdminItems from "../AdminItems/AdminItems";
-
 import {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { responsiveFontSizes } from "@material-ui/core";
 
-
-
 function Admin() {
-
     // let dispatch = useDispatch()
     
     //use useEffect to render my page 
