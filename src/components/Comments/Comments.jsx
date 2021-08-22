@@ -21,7 +21,6 @@ function  Comments () {
         type: "CUSTOMER_COMMENT_INPUTS",
         payload: comment,
       });
-
       history.push("/review"); //if it meats the condition, we will proceed to the next  page.
     } else {
       alert(
@@ -34,7 +33,6 @@ function  Comments () {
     history.push("/support");
     console.log("on back button");
   };
-  
   return (
     <>
       <h1>Any comments you want to leave?</h1>
@@ -45,7 +43,6 @@ function  Comments () {
         InputLabelProps={{
         shrink: true,
         }}
-        
         style={{
           width: 600,
         }}
@@ -57,28 +54,12 @@ function  Comments () {
       <br />
       <br />
       <div className="myButtons">
-        <Button
-          size="small"
-          color="primary"
-          variant="contained"
-          onClick={onBackButton}
-        >
-          BACK
-        </Button>
+        <Button size="small" color="primary" variant="contained" onClick={onBackButton}>BACK</Button>
       </div>
       <div className="myButtons">
-        <Button
-          size="small"
-          color="primary"
-          variant="contained"
-          className="commentButton"
-          onClick={onNextButton}
-        >
-          NEXT
-        </Button>
+        <Button size="small" color="primary" variant="contained" className="commentButton" onClick={onNextButton}>NEXT</Button>
       </div>
     </>
   );
 }
-
 export default Comments
