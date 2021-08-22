@@ -9,26 +9,25 @@ import axios from 'axios';
 function AdminItems({ item, getSurveyResults }) {
     //this function will allow me to make a delete request to the server using item.id
   const onDeleteButton = () => {
-  
+    //Prompt the user to confirm prior to deleting the feedback from the database.
     if (confirm("Are You Sure?")) {
-          let deleteId = item.id;
-          console.log("on Delete Button", deleteId);
-          //making request for deletion
-          axios({
-            method: "DELETE",
-            url: `/api/survey/${deleteId}`, //passing the item id
-          })
-            .then((response) => {
-              console.log("DELETE /api/survey/ response is:", response);
-              getSurveyResults(); // will refresh page with current data from my db
-            })
-            .catch((error) => {
-              // will catch error
-              //this will log the error to the console.
-              console.log("DELETE /api/survey/ error is:", error);
-            });
-   
-    } else {
+      let deleteId = item.id;
+      console.log("on Delete Button", deleteId);
+      //making request for deletion
+      axios({
+        method: "DELETE",
+        url: `/api/survey/${deleteId}`, //passing the item id
+      })
+        .then((response) => {
+          console.log("DELETE /api/survey/ response is:", response);
+          getSurveyResults(); // will refresh page with current data from my db
+        })
+        .catch((error) => {
+          // will catch error
+          //this will log the error to the console.
+          console.log("DELETE /api/survey/ error is:", error);
+        });
+    } else { // alert that delete request is cancelled
       alert("Delete request cancelled.");
     }
   };
