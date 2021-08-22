@@ -41,7 +41,7 @@ function AdminItems({ item, getSurveyResults }) {
         <Button
             onClick={onDeleteButton}
             size="small"
-            color="primary"
+            color="secondary"
             variant="contained"
             endIcon={<DeleteIcon />}
           >
