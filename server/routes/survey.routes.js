@@ -28,7 +28,7 @@ pool.query(sqlQuery,sqlParams).then(dbRes => {
 //GET Survey 
 router.get('/', (req, res) =>{
     let sqlQuery = `SELECT * FROM "feedback"
-    ORDER BY "date" DESC`
+    ORDER BY "id" DESC`
     pool.query(sqlQuery)
     .then(dbRes => {
         res.send(dbRes.rows)
