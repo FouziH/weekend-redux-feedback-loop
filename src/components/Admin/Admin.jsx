@@ -7,37 +7,38 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import axios from "axios";
-import DeleteOutlinedIcon from "@material-ui/icons/DeleteOutlined";
+import AdminItems from "../AdminItems/AdminItems";
+
 import {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { responsiveFontSizes } from "@material-ui/core";
-import Button from '@material-ui/core/Button'
+
 
 
 function Admin() {
 
     // let dispatch = useDispatch()
     
+    //use useEffect to render my page 
     useEffect(() => {
-        getSurveyResults()
+        getSurveyResults(); //calling my getSurveyResults function 
     }, [])
 
+    //using useState 
     const [survey, setSurveyResults] = useState([])
     const getSurveyResults = () => {
+
+        //making axios get request to my server
         axios({
             method:'GET',
             url: "/api/survey"
         }).then(response => {
+            //passing response to my local state
             setSurveyResults(response.data)
         }).catch(error =>{
-            console.log("/GET error is", error)
+            console.log("/GET error is", error); //login error
         })
     }
-    const onDeleteButton = (event) =>{
-        console.log("on Delete Button", event.target)
-
-    }
-
 
   return (
     <>
@@ -56,21 +57,7 @@ function Admin() {
           </TableHead>
           <TableBody>
             {survey.map((item) => (
-              <TableRow key={item.id}>
-                <TableCell align="center">{item.feeling}</TableCell>
-                <TableCell align="center">{item.understanding}</TableCell>
-                <TableCell align="center">{item.support}</TableCell>
-                <TableCell align="center">{item.comments}</TableCell>
-                <TableCell align="center">
-                  <Button onClick={onDeleteButton}
-                    size="small"
-                    color="primary"
-                    variant="contained"
-                  >
-                    Delete
-                  </Button>
-                </TableCell>
-              </TableRow>
+              <AdminItems key={item.id} item={item}  getSurveyResults={getSurveyResults}/>
             ))}
           </TableBody>
         </Table>

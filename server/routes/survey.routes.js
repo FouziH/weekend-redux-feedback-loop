@@ -25,12 +25,10 @@ pool.query(sqlQuery,sqlParams).then(dbRes => {
     res.sendStatus(500)
 })
 })
-
 //GET Survey 
-
 router.get('/', (req, res) =>{
     let sqlQuery = `SELECT * FROM "feedback"
-    ORDER BY "date" ASC`
+    ORDER BY "date" DESC`
     pool.query(sqlQuery)
     .then(dbRes => {
         res.send(dbRes.rows)
@@ -39,5 +37,22 @@ router.get('/', (req, res) =>{
         console.log('dbRes /get error is:', error)
     })
 })
+// Delete Survey based on id
+router.delete('/:id', (req, res) =>{
+    let sqlQuery =  `DELETE FROM "feedback" 
+    WHERE "id"=$1`
+
+    let sqlParams = [req.params.id]
+
+    pool.query(sqlQuery, sqlParams)
+    .then(dbRes => {
+        console.log("db Res delete response is", dbRes)
+        res.sendStatus(200)
+    }).catch(error =>{
+        console.log("Delete request error is", error)
+    })
+})
+
+
 
 module.exports = router
