@@ -9,9 +9,9 @@ import Paper from "@material-ui/core/Paper";
 import axios from "axios";
 import AdminItems from "../AdminItems/AdminItems";
 import {useEffect, useState} from 'react';
+import { makeStyles } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { responsiveFontSizes } from "@material-ui/core";
-
 function Admin() {
     //use useEffect to render my page 
     useEffect(() => {
@@ -33,12 +33,12 @@ function Admin() {
     }
   return (
     <>
-      <h1>FeedbAck Results!</h1>
+      <h1>Feedback Results!</h1>
       <br />
       <TableContainer component={Paper}>
         <Table aria-label="simple table">
-          <TableHead>
-            <TableRow>
+          <TableHead >
+            <TableRow >
               <TableCell align="center">Feeling</TableCell>
               <TableCell align="center">Comprehension</TableCell>
               <TableCell align="center">Support</TableCell>
@@ -48,7 +48,11 @@ function Admin() {
           </TableHead>
           <TableBody>
             {survey.map((item) => (
-              <AdminItems key={item.id} item={item}  getSurveyResults={getSurveyResults}/>
+              <AdminItems
+                key={item.id}
+                item={item}
+                getSurveyResults={getSurveyResults}
+              />
             ))}
           </TableBody>
         </Table>
