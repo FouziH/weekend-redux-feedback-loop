@@ -61,4 +61,17 @@ router.delete('/:id', (req, res) =>{
       console.log("Delete request error is", error);
     })
 })
+router.put('/:id', (req, res) => {
+  let sqlQuery = `UPDATE "feedback"
+                  SET "flagged" = true
+                  WHERE "id" =$1;`
+  let sqlParams = [req.params.id]
+  pool.query(sqlQuery, sqlParams)
+  .then(dbRes => {
+    console.log('PUT request db response is', dbRes)
+    res.sendStatus(200)
+  }).catch(error => {
+    console.log("PUT request db error is", error);
+  })
+})
 module.exports = router

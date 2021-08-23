@@ -3,6 +3,7 @@ import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
+import FlagIcon from "@material-ui/icons/Flag";
 import axios from 'axios';
 //This function is responsible for displaying items, and refreshing the page with the new items
 function AdminItems({ item, getSurveyResults }) {
@@ -30,6 +31,18 @@ function AdminItems({ item, getSurveyResults }) {
       alert("Delete request cancelled.");
     }
   };
+  const flagComment = () => {
+    let flagItemId = item.id
+    console.log('on flag comment button', flagItemId)
+    axios({
+      method: "PUT",
+      url: `/api/survey/${flagItemId}`,
+    }).then(response => {
+      console.log("PUT /api/survey/ response is:", response);
+    } ).catch(error => {
+      console.log("PUT /api/survey/ error is:", error);
+    })
+  }
   return (
     <>
       <TableRow>
@@ -38,15 +51,27 @@ function AdminItems({ item, getSurveyResults }) {
         <TableCell align="center">{item.support}</TableCell>
         <TableCell align="center">{item.comments}</TableCell>
         <TableCell align="center">
-        <Button
-            onClick={onDeleteButton}
-            size="small"
-            color="secondary"
-            variant="contained"
-            endIcon={<DeleteIcon />}
-          >
-            Delete
-        </Button>
+          <div className="myAdmin">
+            <Button onClick={flagComment}
+              endIcon={<FlagIcon />}
+              size="small"
+              color="primary"
+              variant="outlined"
+            >
+              Flag
+            </Button>
+          </div>
+          <div className="myAdmin">
+            <Button
+              onClick={onDeleteButton}
+              size="small"
+              color="secondary"
+              variant="contained"
+              endIcon={<DeleteIcon />}
+            >
+              Delete
+            </Button>
+          </div>
         </TableCell>
       </TableRow>
     </>
