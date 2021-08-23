@@ -1,10 +1,14 @@
 # Weekend-Redux-Feedback-Loop
 
-Duration: Weekend Project
+Duration: 2 days
 
 This is a simple survey app that asks the user for their input regarding their feeling, understanding, support, and finally if they would like to add comments to their feedback before submitting the feed back.
 
 To see the fully functional site, please visit: https://redux-feedback-loop-fouzi.herokuapp.com/
+
+<img width="1378" alt="Screen Shot 2021-08-22 at 7 42 29 PM" src="https://user-images.githubusercontent.com/78863626/130375897-c445531a-d39f-49f1-8a19-ddff022cfb1d.png">
+
+<img width="1374" alt="Screen Shot 2021-08-22 at 7 46 16 PM" src="https://user-images.githubusercontent.com/78863626/130375937-7108831c-ced7-4493-9475-e40e1a6004de.png">
 
 # Prerequisites
 
