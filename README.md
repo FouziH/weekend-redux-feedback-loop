@@ -38,7 +38,7 @@ To use the app, you will need to open the app locally using npm run server and n
 
 # Acknowledgement
 
-Thanks to Prime Digital Academy who equipped and helped me to make this application a reality.
+Thanks to Prime Digital Academy who equipped and helped us to make this application a reality.
 
 # Support 
-If you have suggestions or questions, please email me at @HamzaFowzi1@gmail.com
+If you have suggestions or questions, contact Sulaiman Bada at sulaimanbada8048@gmail.com
